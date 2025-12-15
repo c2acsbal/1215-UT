@@ -10,9 +10,9 @@ def maganhango_torl(szoveg):
     
     return modszoveg
 
-szoveg = input("Intput: ")
+#szoveg = input("Intput: ")
 
-print(maganhango_torl(szoveg))
+#print(maganhango_torl(szoveg))
 
 class Tesztmaganh(unittest.TestCase):
     def test_pelda(self):
