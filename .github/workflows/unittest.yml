@@ -23,6 +23,5 @@ jobs:
         run: |
           python amstrong.py
           python jelszo.py
-          python karacsony.py
           python maganh.py
           python mozgas.py
