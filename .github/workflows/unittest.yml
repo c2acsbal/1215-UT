@@ -21,4 +21,8 @@ jobs:
 
       - name: Run Tests
         run: |
-          python abszolut.py
+          python amstrong.py
+          python jelszo.py
+          python karacsony.py
+          python maganh.py
+          python mozgas.py
