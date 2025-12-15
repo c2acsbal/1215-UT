@@ -1,11 +1,23 @@
-bekertHossz = input("Kérek egy számot: ")
-bekert = int(bekertHossz)
-ossz = 0
+import unittest
 
-for i in range(len(bekertHossz)):
-    ossz += int(bekertHossz[i]) ** len(bekertHossz)
+def armstrong_szam(szam: int) -> bool:
+    szoveg = str(szam)
+    hatvany = len(szoveg)
+    osszeg = 0
 
-if ossz == bekert:
-    print("Ez egy Armstrong szám!")
-else:
-    print("Ez NEM egy Armstrong szám!")
+    for karakter in szoveg:
+        osszeg += int(karakter) ** hatvany
+
+    return osszeg == szam
+
+
+
+class TestArmstrongSzam(unittest.TestCase):
+
+    def test_armstrong_szam(self):
+        self.assertTrue(armstrong_szam(153))
+        self.assertTrue(armstrong_szam(370))
+
+
+
+unittest.main()

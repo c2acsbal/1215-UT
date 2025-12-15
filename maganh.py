@@ -1,3 +1,5 @@
+import unittest
+
 def maganhango_torl(szoveg):
     maganhanzok = ["a", "á", "e", "é", "i", "í", "o", "ó", "ö", "ő", "u", "ú", "ü", "ű"]
 
@@ -11,4 +13,11 @@ def maganhango_torl(szoveg):
 szoveg = input("Intput: ")
 
 print(maganhango_torl(szoveg))
+
+class Tesztmaganh(unittest.TestCase):
+    def test_pelda(self):
+        fgv = maganhango_torl("Iden Java szigeten voltunk nyaralni.")
+        self.assertEqual(fgv, "dn Jv szgtn vltnk nyrln.")
+
+unittest.main()
         

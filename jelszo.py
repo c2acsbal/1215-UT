@@ -1,3 +1,5 @@
+import unittest
+
 def jelsz_erosseg(jelszo):
     erosseg = 1
     if len(jelszo) >= 5:
@@ -22,6 +24,13 @@ def jelsz_erosseg(jelszo):
     
     return erosseg
 
-jelszo = input("Input: ")
+#jelszo = input("Input: ")
 
-print(jelsz_erosseg(jelszo))
+#print(jelsz_erosseg(jelszo))
+
+class TesztJelszo(unittest.TestCase):
+    def test_pelda(self):
+        fgv = jelsz_erosseg("hazi_macska_4_life")
+        self.assertEqual(fgv, 10)
+
+unittest.main()

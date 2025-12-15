@@ -1,27 +1,31 @@
-mozgas = input("Kérek egy mozdulatsorozatot! ")
-x = 0
-y = 0
+import unittest
+def mozgas_ertekeles(mozgas: str) -> tuple[int, int]:
+    x = 0
+    y = 0
 
-for i in range(len(mozgas)):
-    if mozgas[i].upper() == "B":
-        x -= 1
-    elif mozgas[i].upper() == "J":
-        x += 1
-    elif mozgas[i].upper() == "F":
-        y -= 1
-    elif mozgas[i].upper() == "L":
-        y += 1
+    for m in mozgas:
+        m = m.upper()
+        if m == "B":
+            x -= 1
+        elif m == "J":
+            x += 1
+        elif m == "F":
+            y -= 1
+        elif m == "L":
+            y += 1
 
-if x > 0:
-    print(f"Jobbra: {x}")
-elif x < 0:
-    print(f"Balra: {-x}")
-else:
-    print(f"Nem mozdult x irányba")
+    return x, y
 
-if y > 0:
-    print(f"Fel: {y}")
-elif y < 0:
-    print(f"Le: {-y}")
-else:
-    print(f"Nem mozdult y irányba: {y}")
+
+
+
+class TestMozgas(unittest.TestCase):
+
+    def test_csak_x_mozgas(self):
+        self.assertEqual(mozgas_ertekeles("JJFBFFFFFFBBBL"), (2, 6))
+        self.assertEqual(mozgas_ertekeles("FBLLLJLLJ"), (1, 4))
+
+
+
+
+unittest.main()
